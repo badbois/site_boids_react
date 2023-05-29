@@ -2,6 +2,7 @@ import useFetch from './useFetch';
 import Article from './Article';
 import Example from './Example';
 import BoidsManager from './p5example/BoidsManager';
+import Test from './p5example/Test';
 
 
 const Home = () => {
@@ -14,7 +15,8 @@ const Home = () => {
             { isPending && <div> Loading..  </div> }
             <Article articles ={articles}/>
             <h1>Exemple de d'implémentation</h1>
-            <BoidsManager/>
+            {/* <BoidsManager/> */}
+            <Test/>
             <h1>Exemple de développement</h1>
             <Example examples ={examples}/>
         </div>

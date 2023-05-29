@@ -45,8 +45,8 @@ function BoidsManager() {
     const draw = p5 => {
         //p5.background(20)
         for (let boid of flock) {
-            //boid.edges();
-            //boid.flock(flock);
+            boid.edges();
+            boid.flock(flock);
             boid.update();
             boid.show();
         }

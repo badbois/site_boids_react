@@ -4,16 +4,15 @@
 // //And on his website there :
 // //https://thecodingtrain.com/CodingChallenges/124-flocking-boids.html
 
-//import p5 from "p5";
 
 //init a Boid with random position,velocity and color
 export class Boid {
   constructor(p5) {
     this.p5 = p5;
-    this.position = this.p5.createVector(this.p5.random(this.p5.width), this.p5.random(this.p5.height));
-    this.velocity = this.p5.createVector(this.p5.random(-1, 1), this.p5.random(-1, 1));
-    this.velocity.setMag(this.p5.random(2, 4));
-    this.acceleration = this.p5.createVector();
+    this.position = p5.createVector(p5.random(p5.width), p5.random(p5.height));
+    this.velocity = p5.createVector(p5.random(-1, 1), p5.random(-1, 1));
+    this.velocity.setMag(p5.random(2, 4));
+    this.acceleration = p5.createVector();
     this.maxForce = 1;
     this.maxSpeed = 4;
     this.boid_color = "#" + Math.floor(Math.random()*16777215).toString(16);
@@ -54,7 +53,7 @@ export class Boid {
     if (total > 0) {
       steering.div(total);
       steering.setMag(this.maxSpeed);
-      steering.sub(this.velocity);
+      //steering.sub(this.velocity);
       steering.limit(this.maxForce);
     }
     return steering;
@@ -73,7 +72,8 @@ export class Boid {
       );
       //if (other != this && d < separationObject.perceptionRadius) {
         if (other != this && d < 100) {
-        let diff = this.p5.Vector.sub(this.position, other.position);
+        //let diff = this.p5.Vector.sub(this.position, other.position);
+        let diff = this.p5.createVector(this.position.x - other.position.x, this.position.y - other.position.y);
         diff.div(d * d);
         steering.add(diff);
         total++;
@@ -82,7 +82,7 @@ export class Boid {
     if (total > 0) {
       steering.div(total);
       steering.setMag(this.maxSpeed);
-      steering.sub(this.velocity);
+      //steering.sub(this.velocity);
       steering.limit(this.maxForce);
     }
     return steering;
@@ -107,9 +107,9 @@ export class Boid {
     }
     if (total > 0) {
       steering.div(total);
-      steering.sub(this.position);
+      //steering.sub(this.position);
       steering.setMag(this.maxSpeed);
-      steering.sub(this.velocity);
+      //steering.sub(this.velocity);
       steering.limit(this.maxForce);
     }
     return steering;
