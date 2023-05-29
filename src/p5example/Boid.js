@@ -1,18 +1,19 @@
-//This script has been made from the Daniel's Shiffman one
-//You can find out the tutorial on his youtube channel:
-//https://youtu.be/mhjuuHl6qHM
-//And on his website there :
-//https://thecodingtrain.com/CodingChallenges/124-flocking-boids.html
+// //This script has been made from the Daniel's Shiffman one
+// //You can find out the tutorial on his youtube channel:
+// //https://youtu.be/mhjuuHl6qHM
+// //And on his website there :
+// //https://thecodingtrain.com/CodingChallenges/124-flocking-boids.html
 
 //import p5 from "p5";
 
 //init a Boid with random position,velocity and color
-class Boid {
-  constructor() {
-    this.position = window.p5.createVector(window.p5.random(p5.width), window.p5.random(p5.height));
-    this.velocity = p5.createVector(p5.random(-1, 1), p5.random(-1, 1));
-    this.velocity.setMag(p5.random(2, 4));
-    this.acceleration = p5.createVector();
+export class Boid {
+  constructor(p5) {
+    this.p5 = p5;
+    this.position = this.p5.createVector(this.p5.random(this.p5.width), this.p5.random(this.p5.height));
+    this.velocity = this.p5.createVector(this.p5.random(-1, 1), this.p5.random(-1, 1));
+    this.velocity.setMag(this.p5.random(2, 4));
+    this.acceleration = this.p5.createVector();
     this.maxForce = 1;
     this.maxSpeed = 4;
     this.boid_color = "#" + Math.floor(Math.random()*16777215).toString(16);
@@ -21,24 +22,24 @@ class Boid {
   //check if the boids are out of bound they're teleported to the
   //other side of the screen
   edges() {
-    if (this.position.x > p5.width) {
+    if (this.position.x > this.p5.width) {
       this.position.x = 0;
     } else if (this.position.x < 0) {
-      this.position.x = p5.width;
+      this.position.x = this.p5.width;
     }
-    if (this.position.y > p5.height) {
+    if (this.position.y > this.p5.height) {
       this.position.y = 0;
     } else if (this.position.y < 0) {
-      this.position.y = p5.height;
+      this.position.y = this.p5.height;
     }
   }
 
   //Alignment behavior
   align(boids) {
-    let steering = p5.createVector();
+    let steering = this.p5.createVector();
     let total = 0;
     for (let other of boids) {
-      let d = p5.dist(
+      let d = this.p5.dist(
         this.position.x,
         this.position.y,
         other.position.x,
@@ -61,10 +62,10 @@ class Boid {
 
   //Separation behavior
   separation(boids) {
-    let steering = p5.createVector();
+    let steering = this.p5.createVector();
     let total = 0;
     for (let other of boids) {
-      let d = p5.dist(
+      let d = this.p5.dist(
         this.position.x,
         this.position.y,
         other.position.x,
@@ -72,7 +73,7 @@ class Boid {
       );
       //if (other != this && d < separationObject.perceptionRadius) {
         if (other != this && d < 100) {
-        let diff = p5.Vector.sub(this.position, other.position);
+        let diff = this.p5.Vector.sub(this.position, other.position);
         diff.div(d * d);
         steering.add(diff);
         total++;
@@ -89,10 +90,10 @@ class Boid {
 
   //Cohesion behavior
   cohesion(boids) {
-    let steering = p5.createVector();
+    let steering = this.p5.createVector();
     let total = 0;
     for (let other of boids) {
-      let d = p5.dist(
+      let d = this.p5.dist(
         this.position.x,
         this.position.y,
         other.position.x,
@@ -144,24 +145,22 @@ class Boid {
 
   //Draw a boid
   show() {
-    p5.strokeWeight(2);
-    p5.stroke(this.boid_color);
+    this.p5.strokeWeight(2);
+    this.p5.stroke(this.boid_color);
 
 
-    let theta= this.velocity.heading()+p5.radians(90);
+    let theta= this.velocity.heading()+this.p5.radians(90);
 
     
-    p5.push()
-    p5.translate(this.position.x, this.position.y);
-    p5.rotate(theta)
+    this.p5.push()
+    this.p5.translate(this.position.x, this.position.y);
+    this.p5.rotate(theta)
    
-    p5.beginShape()
-    p5.vertex(0, -4);
-    p5.vertex(-3, 2);
-    p5.vertex(3, 2);
-    p5.endShape()
-    p5.pop()
+    this.p5.beginShape()
+    this.p5.vertex(0, -4);
+    this.p5.vertex(-3, 2);
+    this.p5.vertex(3, 2);
+    this.p5.endShape()
+    this.p5.pop()
   }
 }
-
-export default Boid;

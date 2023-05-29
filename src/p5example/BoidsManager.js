@@ -1,5 +1,6 @@
 import Sketch from 'react-p5'
-import Boid from './Boid.js'
+import p5 from 'p5'
+import {Boid} from './Boid'
 
 function BoidsManager() {
     
@@ -26,22 +27,27 @@ function BoidsManager() {
     //Create and fill the flock array during the setup
     const flock = [];
 
+    
+
     const setup = (p5, canvasParentRef) => {
         p5.createCanvas(640, 360).parent(canvasParentRef)
         for (let i = 0; i < 20; i++) {
-            flock.push(new Boid())
+            flock.push(new Boid(p5))
         }
     }
+    //------------------------------------------------------
+
     
     //------------------------------------------------------
 
+
     //Draw each flock
     const draw = p5 => {
-        p5.background(20)
+        //p5.background(20)
         for (let boid of flock) {
-            // boid.edges();
-            // boid.flock(flock);
-            // boid.update();
+            //boid.edges();
+            //boid.flock(flock);
+            boid.update();
             boid.show();
         }
        
