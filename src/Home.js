@@ -14,9 +14,6 @@ const Home = () => {
             { error && <div> { error } </div>}
             { isPending && <div> Loading..  </div> }
             <Article articles ={articles}/>
-            <h1>Exemple de d'implémentation</h1>
-            {/* <BoidsManager/> */}
-            <Test/>
             <h1>Exemple de développement</h1>
             <Example examples ={examples}/>
         </div>
