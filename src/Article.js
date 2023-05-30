@@ -1,6 +1,5 @@
 const  Article = ({articles}) => {
     if(articles){
-        console.log(articles);
         return (
             <div className="article-list">
             { articles.map( (article) => (
