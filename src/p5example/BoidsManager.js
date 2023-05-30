@@ -7,7 +7,7 @@ function BoidsManager() {
  
     const setup = (p5, canvasParentRef) => {
         p5.createCanvas(800, 600).parent(canvasParentRef)
-        for (let i = 0; i < 200; i++) {
+        for (let i = 0; i < 300; i++) {
             flock.push(new Boid(p5))
         }
     }
