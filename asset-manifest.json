@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/site_boids_react/static/css/main.f716e307.css",
+    "main.js": "/site_boids_react/static/js/main.cb768aad.js",
+    "index.html": "/site_boids_react/index.html",
+    "main.f716e307.css.map": "/site_boids_react/static/css/main.f716e307.css.map",
+    "main.cb768aad.js.map": "/site_boids_react/static/js/main.cb768aad.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f716e307.css",
+    "static/js/main.cb768aad.js"
+  ]
+}
