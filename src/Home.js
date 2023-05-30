@@ -1,6 +1,6 @@
 import Article from './Article';
 import Example from './Example';
-import data from './db.json';
+import data from './data/db.json';
 
 
 const Home = () => {
