@@ -109,11 +109,59 @@ html{
   line-height: 1.5;
 }
 
+.example img[alt]{
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* boids */
+
 .boidsManager {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
+  padding-bottom: 50px;
 }
+
+.boidsManager h1 {
+  color: #fff;
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.boidsManager p {
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.boidsManager a {
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 80vw;
+  margin: 0 auto;
+  border-top: 1px solid #f2f2f2;
+}
+.footer p {
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+
 
 
 
