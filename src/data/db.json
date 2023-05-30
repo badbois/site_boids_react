@@ -3,14 +3,14 @@
       {
         "title": "Les boids, qu’est ce que c’est ?",
         "body":"Les 'boids' sont des entités virtuelles qui reproduisent le comportement de vol collectif observé chez les oiseaux et d'autres animaux grégaires. Le terme 'boid' est une contraction du mot anglais 'bird' (oiseau) et du mot 'oid' qui signifie 'similaire à'. Les boids sont souvent utilisés en informatique graphique et en intelligence artificielle pour simuler des mouvements de groupe réalistes et créer des effets visuels impressionnants. Le concept des boids a été introduit par Craig Reynolds en 1986 dans son article intitulé 'Flocks, Herds, and Schools: A Distributed Behavioral Model' (Troupeaux, troupeaux et bancs : un modèle comportemental distribué). Il a développé un algorithme simple basé sur trois principes fondamentaux pour générer des mouvements de groupe cohérents : l'alignement, la séparation et la cohésion.",
-        "image": "/img/etourneau.jpg",
+        "image": "https://raw.githubusercontent.com/badbois/site_boids_react/main/public/img/etourneau.jpg",
         "alt": "Nuée d'étourneau",
         "id": 1
       },
       {
         "title": "Alignement, séparation, cohésion",
         "body": "L'alignement consiste à orienter chaque boid dans la même direction que ses voisins proches. La séparation permet d'éviter les collisions en maintenant une distance minimale entre les boids. Enfin, la cohésion permet aux boids de rester groupés en se rapprochant de leurs voisins. Ces règles de base permettent aux boids de se déplacer de manière coordonnée, créant ainsi des motifs de vol collectif fascinants, tels que les vols en forme de V des oies migratrices ou les bancs de poissons qui se déplacent harmonieusement.",
-        "image": "/img/regles.png",
+        "image": "https://raw.githubusercontent.com/badbois/site_boids_react/main/public/img/regles.png",
         "alt": "Illustration des principes d'Alignement, de séparation et de cohésion ",
         "id": 2
       }
@@ -19,31 +19,31 @@
     "examples" : [
       {
         "body": "Dans cet exemple, nous allons créer un environnement virtuel dans lequel des boids évoluent et interagissent les uns avec les autres en respectant les règles d'alignement, de séparation et de cohésion. Pour commencer, nous allons définir les caractéristiques de nos boids. Une position, une vélocité ainsi qu'une couleur aléatoires. Chaque boid sera représenté par un objet doté de ces attributs. Ensuite, nous mettrons en place une boucle de simulation qui se répétera à chaque itération. À chaque étape, nous mettrons à jour la position et la vitesse de chaque boid en fonction de son environnement immédiat. Cela permettra aux boids de réagir en temps réel aux mouvements des autres membres du groupe.",
-        "image": "/img/Boids.png",
+        "image": "https://raw.githubusercontent.com/badbois/site_boids_react/main/public/img/Boids.png",
         "alt": "Code du constructeur de la classe Boid",
         "id": 1
       },
       {
         "body": "Pour l'alignement, nous allons mettre en place une méthode permettant de créer une cohérence dans les mouvements des boids en calculant la moyenne des directions de leurs voisins proches. À chaque itération de la simulation, nous parcourons tous les boids présents dans l'environnement virtuel. Pour chaque boid, nous déterminons un rayon de voisinage qui représente la distance maximale à laquelle il peut percevoir les autres boids et interagir avec eux. Ensuite, pour chaque boid, nous collectons tous les voisins se trouvant dans ce rayon de voisinage. Pour chaque voisin, nous récupérons sa direction actuelle de déplacement. Nous effectuons ensuite une moyenne de toutes les directions des voisins. Une fois que nous avons obtenu la moyenne des directions des voisins, nous ajustons la direction du boid en conséquence. Nous pouvons soit orienter directement le boid vers cette nouvelle direction moyenne, soit l'ajuster progressivement pour créer une transition plus douce entre les directions.",
-        "image": "/img/Alignmment.png",
+        "image": "https://raw.githubusercontent.com/badbois/site_boids_react/main/public/img/Alignmment.png",
         "alt": "Code de la méthode d'alignement",
         "id": 2
       },
       {
         "body": "Pour assurer la séparation entre les boids, nous allons mettre en place un mécanisme qui contrôle la distance entre chaque boid et ses voisins. L'objectif est d'éviter les collisions et de maintenir une certaine distance minimale entre eux. Lors de chaque itération de la simulation, nous parcourons tous les boids présents dans l'environnement virtuel. Pour chaque boid, nous définissons un rayon de voisinage qui représente la zone dans laquelle il peut détecter les autres boids et interagir avec eux. Ensuite, pour chaque boid, nous examinons tous les voisins situés à l'intérieur de ce rayon de voisinage. Pour chaque voisin, nous mesurons la distance entre le boid central et le voisin. Si la distance entre le boid et l'un de ses voisins est inférieure à un seuil prédéfini, cela signifie qu'ils sont trop proches et qu'une séparation est nécessaire. Dans ce cas, nous appliquons une force de répulsion pour éloigner les boids l'un de l'autre. Grâce à ce mécanisme de séparation, les boids sont capables d'éviter les collisions et de maintenir une certaine distance les uns des autres. Cela leur permet de se déplacer de manière sûre et de créer des formations aérées et harmonieuses.",
-        "image": "/img/Separation.png",
+        "image": "https://raw.githubusercontent.com/badbois/site_boids_react/main/public/img/Separation.png",
         "alt": "Code de la méthode de séparation",
         "id": 3
       },
       {
         "body": "Pour assurer la cohésion des boids, nous allons mettre en place un mécanisme qui les incite à se rapprocher les uns des autres et à maintenir le groupe uni. Cela sera réalisé en calculant le centre de gravité du groupe de boids et en ajustant leur direction pour s'en rapprocher. Lors de chaque itération de la simulation, nous parcourons tous les boids présents dans l'environnement virtuel. Nous collectons les positions de tous les boids présents dans un rayon de voisinage défini autour du boid central. Une fois que nous avons récupéré les positions de tous les voisins, nous calculons le centre de gravité du groupe en faisant la moyenne des positions des boids. Ce centre de gravité représente le point moyen du groupe, vers lequel chaque boid devrait tendre pour maintenir la cohésion. Ensuite, pour chaque boid, nous ajustons sa direction actuelle en la modifiant pour qu'elle se rapproche du centre de gravité du groupe. Cela peut être réalisé en modifiant progressivement la direction du boid vers la nouvelle direction désirée.",
-        "image": "/img/Cohesion.png",
+        "image": "https://raw.githubusercontent.com/badbois/site_boids_react/main/public/img/Cohesion.png",
         "alt": "Code de la méthode de cohésion",
         "id": 4
       },
       {
         "body":"Finalement, à chaque itération de la boucle de rendu nous allons appeler ces différentes fonctions afin de laisser chacun de nos boids évoluer en suivant ces règles. ",
-        "image": "/img/Flock.png",
+        "image": "https://raw.githubusercontent.com/badbois/site_boids_react/main/public/img/Flock.png",
         "alt": "Code de la méthode de Flock",
         "id": 5
       }

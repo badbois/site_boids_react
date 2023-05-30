@@ -1,23 +1,25 @@
 const  Article = ({articles}) => {
     if(articles){
+        console.log(articles);
         return (
             <div className="article-list">
-            { articles.map( (blog) => (
-                    <div className="article-preview" key={blog.id}>
-                        { blog.id % 2 === 0 ? (
+            { articles.map( (article) => (
+
+                    <div className="article-preview" key={article.id}>
+                        { article.id % 2 === 0 ? (
                             <div className="article">
                                 <div className="text">
-                                    <h1>{blog.title}</h1>
-                                    <p>{blog.body}</p>
+                                    <h1>{article.title}</h1>
+                                    <p>{article.body}</p>
                                 </div>
-                                <img src={blog.image} alt={blog.alt} />
+                                <img src={article.image} alt={article.alt} />
                             </div>
                             ) : (
                             <div className="article">
-                                <img src={blog.image} alt={blog.alt} />
+                                <img src={article.image} alt={article.alt} />
                                 <div className="text">
-                                    <h1>{blog.title}</h1>
-                                    <p>{blog.body}</p>
+                                    <h1>{article.title}</h1>
+                                    <p>{article.body}</p>
                                 </div>
                             </div>
                             )}
