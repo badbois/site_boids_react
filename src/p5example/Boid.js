@@ -10,8 +10,7 @@ export class Boid {
   constructor(p5) {
     this.p5 = p5;
     
-   //this.position = p5.createVector(p5.random(p5.width), p5.random(p5.height));
-    this.position = p5.createVector(p5.width / 2, p5.height / 2);
+    this.position = p5.createVector(p5.random(p5.width), p5.random(p5.height));
     this.velocity = p5.createVector(p5.random(-1, 1), p5.random(-1, 1));
     this.velocity.setMag(p5.random(2, 4));
     this.acceleration = p5.createVector();
@@ -47,7 +46,7 @@ export class Boid {
         other.position.x,
         other.position.y
       );
-        if (other != this && d < perceptionRadius) {
+        if (other !== this && d < perceptionRadius) {
         steering.add(other.velocity);
         total++;
       }
@@ -74,7 +73,7 @@ export class Boid {
         other.position.x,
         other.position.y
       );
-        if (other != this && d < perceptionRadius) {
+        if (other !== this && d < perceptionRadius) {
         let diff = this.p5.constructor.Vector.sub(this.position, other.position);
         diff.div(d * d);
         steering.add(diff);
@@ -103,7 +102,7 @@ export class Boid {
         other.position.x,
         other.position.y
       );
-        if (other != this && d < perceptionRadius) {
+        if (other !== this && d < perceptionRadius) {
         steering.add(other.position);
         total++;
       }
