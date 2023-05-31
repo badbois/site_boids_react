@@ -79,8 +79,8 @@ html{
 
 .home h1 {
   color: #fff;
-  font-size: 32px;
-  margin-top: 50px;
+  font-size: 20px;
+  margin-top: 20px;
   text-align: center;
 }
 
@@ -172,7 +172,110 @@ html{
   line-height: 1.5;
 }
 
+/* Media Queries */
+@media screen and (max-width: 800px) {
 
+
+
+  .navbar h1 {
+    color: #fff;
+    font-size: 20px;
+  }
+
+  .content {
+    max-width: 80vw;
+    margin: 40px auto;
+  }
+
+  /* Article */
+  .article-preview{
+    padding: 10px 0px;
+    margin: 20px 0;
+  }
+  
+  .article {
+    flex-direction: column;
+    gap: 50px;
+  }
+  
+  .article .text {
+    max-width: 70vw;
+  }
+  
+  .article h1{
+    font-size: 20px;
+  }
+  
+  .article p {
+    font-size: 14px;
+  }
+  
+  .article img {
+    max-height: 400px;
+  }
+  
+  .article img[alt]{
+    font-size: 12px;
+  }
+
+  /* examples */
+
+  .home h1 {
+    font-size: 20px;
+  }
+
+  .example {
+    gap: 0px;
+  }
+
+  .example-preview{ 
+    padding: 0px 0px;
+    margin: 20px 0;
+  }
+
+
+
+  .example .text {
+    margin-bottom: 40px;
+  }
+
+  .example h1{
+    font-size: 20px;
+  }
+
+  .example p {
+    font-size: 14px;
+  }
+
+  .example img {
+    max-width: 80vw;
+    height: auto;
+    border-radius: 5%;
+  }
+
+  .example img[alt]{
+    font-size: 14px;
+  }
+
+  /* boids */
+
+  .boidsManager {
+    padding-bottom: 10px;
+  }
+
+
+  .boidsManager h1 {
+    font-size: 20px;
+  }
+
+  .boidsManager p {
+    font-size: 14px;
+  }
+
+  .boidsManager a {
+    font-size: 14px;
+  }
+}
 
 
 

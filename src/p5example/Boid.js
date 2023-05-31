@@ -157,9 +157,15 @@ export class Boid {
     this.p5.rotate(theta)
    
     this.p5.beginShape()
-    this.p5.vertex(0, -4);
-    this.p5.vertex(-3, 2);
-    this.p5.vertex(3, 2);
+    if(window.innerWidth>800){
+      this.p5.vertex(0, -4);
+      this.p5.vertex(-3, 2);
+      this.p5.vertex(3, 2);
+    }else{
+      this.p5.vertex(0, -2);
+      this.p5.vertex(-1, 1);
+      this.p5.vertex(1, 1);
+    }
     this.p5.endShape()
     this.p5.pop()
   }

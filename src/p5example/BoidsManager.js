@@ -6,9 +6,16 @@ function BoidsManager() {
     const flock = [];
  
     const setup = (p5, canvasParentRef) => {
-        p5.createCanvas(800, 600).parent(canvasParentRef)
-        for (let i = 0; i < 300; i++) {
-            flock.push(new Boid(p5))
+        if(window.innerWidth > 800){
+            p5.createCanvas(800, 600).parent(canvasParentRef)
+            for (let i = 0; i < 300; i++) {
+                flock.push(new Boid(p5))
+            }
+        }else{
+            p5.createCanvas(300, 200).parent(canvasParentRef)
+            for (let i = 0; i < 50; i++) {
+                flock.push(new Boid(p5))
+            }
         }
     }
 
